@@ -39,8 +39,10 @@ rm -f /root/.joinmarket/wallets/.${WALLET_NAME}.lock
 while true; do
     if [ -f "/tmp/stop" ]; then
         echo "/tmp/stop is present, waiting it to get removed to start again..."
+        touch /tmp/stopped
     elif [ -f "$LOCKFILE" ]; then
         echo "$LOCKFILE is present, waiting it to get removed to start again..."
+        touch /tmp/stopped
     else
         rm -f /tmp/stopped
         echo -n "${WALLET_PASS}" | python "${JM_YIELD_GENERATOR}" --wallet-password-stdin "${WALLET_NAME}"

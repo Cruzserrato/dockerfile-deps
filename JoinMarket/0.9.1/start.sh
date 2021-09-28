@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm /tmp/stop
+rm -f /tmp/stop
