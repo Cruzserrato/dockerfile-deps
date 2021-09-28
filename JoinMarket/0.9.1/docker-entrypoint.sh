@@ -45,7 +45,7 @@ while true; do
         touch /tmp/stopped
     else
         rm -f /tmp/stopped
-        echo -n "${WALLET_PASS}" | python "${JM_YIELD_GENERATOR}" --wallet-password-stdin "${WALLET_NAME}"
+        echo -n "${WALLET_PASS}" | python "${JM_YIELD_GENERATOR}" --wallet-password-stdin "${WALLET_NAME}" || true
         touch /tmp/stopped
     fi
     sleep 10
