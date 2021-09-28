@@ -10,5 +10,5 @@ fi
 export $(cat "$ENV_FILE" | xargs)
 
 stop.sh
-echo -n "${WALLET_PASS}" | python sendpayment.py --wallet-password-stdin "${WALLET_NAME}" "$@"
+sendpayment.py "${WALLET_NAME}" "$@"
 start.sh
