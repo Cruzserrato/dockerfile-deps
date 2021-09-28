@@ -22,6 +22,6 @@ RUN . jmvenv/bin/activate && cd /src/scripts && \
     && cp "${CONFIG}" "${DEFAULT_CONFIG}"
 WORKDIR /src/scripts
 COPY docker-entrypoint.sh .
-COPY *.sh .
+COPY *.sh ./
 ENV PATH /src/scripts:$PATH
 ENTRYPOINT  [ "tini", "-g", "--", "./docker-entrypoint.sh" ]
